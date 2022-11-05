@@ -25,7 +25,7 @@ public class BackendApplicationTests {
 
 	@Test
 	public void backTest() throws Exception {
-		mockMvc.perform(MockMvcRequestBuilders.post("/json1").contentType(MediaType.APPLICATION_JSON).content("{\n"
+		mockMvc.perform(MockMvcRequestBuilders.post("/json1").contentType(MediaType.APPLICATION_JSON).content("{ \"files\": [ {\n"
 				+ "  \"models\": [\n" + "    {\n" + "      \"edges\": [\n" + "        {\n"
 				+ "          \"id\": \"2067c9f4-4269-4499-ad16-5742d75bc9fd\",\n"
 				+ "          \"name\": \"correct_pin\",\n"
@@ -49,10 +49,11 @@ public class BackendApplicationTests {
 				+ "          \"name\": \"home_page\",\n" + "          \"properties\": {\n" + "            \"x\": 593,\n"
 				+ "            \"y\": 257\n" + "          }\n" + "        }\n" + "      ]\n" + "    }\n" + "  ],\n"
 				+ "  \"selectedModelIndex\": 0,\n"
-				+ "  \"selectedElementId\": \"f655d4c2-4203-4590-9ab7-c4fef5554955\"\n" + "}"))
+				+ "  \"selectedElementId\": \"f655d4c2-4203-4590-9ab7-c4fef5554955\"\n" + "}]}"))
 				.andExpect(MockMvcResultMatchers.status().isOk())
-				.andExpect(MockMvcResultMatchers.jsonPath("$.path1", Matchers.is("login_page")))
-				.andExpect(MockMvcResultMatchers.jsonPath("$.path2", Matchers.is("home_page")));
+				.andExpect(MockMvcResultMatchers.jsonPath("$.paths[0].from", Matchers.is("login_page")))
+				.andExpect(MockMvcResultMatchers.jsonPath("$.paths[0].edge", Matchers.is("correct_pin")))
+				.andExpect(MockMvcResultMatchers.jsonPath("$.paths[0].to", Matchers.is("home_page")));
 	}
 
 	@Test
@@ -145,11 +146,14 @@ public class BackendApplicationTests {
 						+ "			}],\n" + "			\"selectedModelIndex\": 0,\n"
 						+ "			\"selectedElementId\": \"2016bb60-9f82-4510-818b-f045cd632ad9\"\n" + "		}\n"
 						+ "	]\n" + "}"))
-				.andExpect(MockMvcResultMatchers.jsonPath("$.path1", Matchers.is("login_page")))
-				.andExpect(MockMvcResultMatchers.jsonPath("$.path2", Matchers.is("home_page")))
-				.andExpect(MockMvcResultMatchers.jsonPath("$.path3", Matchers.is("jobs")))
-				.andExpect(MockMvcResultMatchers.jsonPath("$.path4", Matchers.is("posts")))
-				.andExpect(MockMvcResultMatchers.jsonPath("$.path5", Matchers.is("search")));
+				.andExpect(MockMvcResultMatchers.jsonPath("$.paths[0].from", Matchers.is("login_page")))
+				.andExpect(MockMvcResultMatchers.jsonPath("$.paths[0].edge", Matchers.is("correct_pin")))
+				.andExpect(MockMvcResultMatchers.jsonPath("$.paths[0].to", Matchers.is("home_page")));
+				//.andExpect(MockMvcResultMatchers.jsonPath("$.path1", Matchers.is("login_page")))
+				//.andExpect(MockMvcResultMatchers.jsonPath("$.path2", Matchers.is("home_page")))
+				//.andExpect(MockMvcResultMatchers.jsonPath("$.path3", Matchers.is("jobs")))
+				//.andExpect(MockMvcResultMatchers.jsonPath("$.path4", Matchers.is("posts")))
+				//.andExpect(MockMvcResultMatchers.jsonPath("$.path5", Matchers.is("search")));
 
 	}
 

@@ -1,0 +1,88 @@
+{
+  "files": [
+    {
+      "models": [
+        {
+          "edges": [
+            {
+              "id": "16ae3526-7b4f-410a-8959-f928d0fa1fe2",
+              "name": "correct_pin",
+              "sourceVertexId": "9c725be1-b8b6-4b54-85bc-bdfa00a5a72e",
+              "targetVertexId": "246c8fa3-7650-463a-97f8-ac5f876dca01"
+            },
+            {
+              "id": "0a300803-ac2d-4842-9325-a2809f79b6db",
+              "name": "create_account",
+              "sourceVertexId": "9c725be1-b8b6-4b54-85bc-bdfa00a5a72e",
+              "targetVertexId": "5a2ccf4b-56b8-4609-b05c-f4d6958af06e"
+            },
+            {
+              "id": "7fbdb1bd-244d-43d5-853c-b3bf2feaae26",
+              "name": "account_created",
+              "sourceVertexId": "5a2ccf4b-56b8-4609-b05c-f4d6958af06e",
+              "targetVertexId": "9c725be1-b8b6-4b54-85bc-bdfa00a5a72e"
+            },
+            {
+              "id": "8dde88fc-c0e7-43d5-866d-1bd04356e570",
+              "name": "log_out",
+              "sourceVertexId": "246c8fa3-7650-463a-97f8-ac5f876dca01",
+              "targetVertexId": "9c725be1-b8b6-4b54-85bc-bdfa00a5a72e"
+            },
+            {
+              "id": "a19baf07-3242-442d-ae1d-d756373cb30d",
+              "name": "proceed",
+              "sourceVertexId": "246c8fa3-7650-463a-97f8-ac5f876dca01",
+              "targetVertexId": "acb9ddb1-f37e-433c-b617-155e7b85ff49"
+            },
+            {
+              "id": "da3ab39f-7ffe-465a-ba04-4e567a3421b6",
+              "name": "nevermind",
+              "sourceVertexId": "acb9ddb1-f37e-433c-b617-155e7b85ff49",
+              "targetVertexId": "246c8fa3-7650-463a-97f8-ac5f876dca01"
+            }
+          ],
+          "generator": "random(edge_coverage(100))",
+          "id": "5ea631df-1fdc-4a14-8064-b949cc117171",
+          "name": "t1",
+          "startElementId": "9c725be1-b8b6-4b54-85bc-bdfa00a5a72e",
+          "vertices": [
+            {
+              "id": "9c725be1-b8b6-4b54-85bc-bdfa00a5a72e",
+              "name": "login_page",
+              "properties": {
+                "x": 391,
+                "y": 311
+              }
+            },
+            {
+              "id": "246c8fa3-7650-463a-97f8-ac5f876dca01",
+              "name": "home_page",
+              "properties": {
+                "x": 964,
+                "y": 316
+              }
+            },
+            {
+              "id": "5a2ccf4b-56b8-4609-b05c-f4d6958af06e",
+              "name": "sign_up",
+              "properties": {
+                "x": 512,
+                "y": 143
+              }
+            },
+            {
+              "id": "acb9ddb1-f37e-433c-b617-155e7b85ff49",
+              "name": "delete_account",
+              "properties": {
+                "x": 1296,
+                "y": 316
+              }
+            }
+          ]
+        }
+      ],
+      "selectedModelIndex": 0,
+      "selectedElementId": "246c8fa3-7650-463a-97f8-ac5f876dca01"
+    }
+  ]
+}

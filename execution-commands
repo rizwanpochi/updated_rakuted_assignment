@@ -1,0 +1,38 @@
+# To clean the project using maven
+
+mvn clean
+
+# To install the project dependencies
+
+mvn install
+
+# To run unit tests in maven
+
+mvn test
+
+# To package the application as a JAR file
+
+mvn package
+
+# To run java application from jar on the terminal
+
+java -jar target/backend-0.0.1-SNAPSHOT.jar
+
+# To run the java application with jacocoagent for instrumentation
+
+java -javaagent:/home/rizwan/Downloads/backend/jacoco/lib/jacocoagent.jar=output=tcpserver,address=localhost,port=8081 -jar target/backend-0.0.1-SNAPSHOT.jar
+
+
+
+
+# To get the report coverage or the dump of the instrumentation
+
+java -jar ~/Downloads/backend/jacoco/lib/jacococli.jar dump --address localhost --port 8081 --destfile ./jacocoTest.exec
+
+# To get the coverage from the above dump and show the output in html
+
+java -jar jacoco/lib/jacococli.jar report jacocoTest.exec --classfiles target/classes --html ./report
+
+# Then open browser and show the code coverage.
+
+# Repeat again after calling the api's and execute the above commands again and the code coverage would have increased.

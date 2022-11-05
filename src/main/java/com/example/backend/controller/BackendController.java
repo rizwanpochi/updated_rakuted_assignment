@@ -18,7 +18,7 @@ public class BackendController {
 
 	// First API to display all the paths from a JSON file.
 
-	@CrossOrigin(origins = "http://localhost:8000")
+	@CrossOrigin(origins = "http://localhost:3000")
 	@PostMapping(path = "json1")
 	public JSONObject api1(@RequestBody Common commonModel) {
 		ArrayList<Vertex> vertices = commonModel.files.get(0).models.get(0).vertices;
@@ -49,6 +49,7 @@ public class BackendController {
 
 	// Second API to display the common path from 2 JSON files.
 
+	@CrossOrigin(origins = "http://localhost:3000")
 	@PostMapping(path = "common")
 	public JSONObject apiCommon(@RequestBody Common commonModel) {
 		JSONObject objcomm = new JSONObject();
@@ -88,7 +89,7 @@ public class BackendController {
 
 	// Third API to display the all the paths from both JSON files.
 
-	@CrossOrigin(origins = "http://localhost:8000")
+	@CrossOrigin(origins = "http://localhost:3000")
 	@PostMapping(path = "all")
 	public JSONObject apiAll(@RequestBody Common finalModel) {
 	
